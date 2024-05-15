@@ -9,6 +9,19 @@ function MostrarDatos($nombres, $apellidos, $curso, $semestre){
     return $mensaje;
 }
 
-echo ObtenerSaludo("Erick")."</n>";
-echo MostrarDatos("Erick", "Quecaño", "Backend","III");
+function calcular($operador, $numero1, $numero2){
+
+    if($operador=="+")
+    return $numero1+$numero2;
+    if($operador=="-")
+    return $numero1-$numero2;
+    if($operador=="*")
+    return $numero1*$numero2;
+    if($operador=="/")
+    return $numero1/$numero2;
+}
+
+echo ObtenerSaludo("Erick")."<br>";
+echo MostrarDatos("Erick", "Quecaño", "Backend","III")."<br>";
+echo "El total de la suma es : ".calcular("+",10,34)
 ?>
