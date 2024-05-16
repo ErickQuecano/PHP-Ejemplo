@@ -28,6 +28,6 @@
             $menor=$numero;
         }
     }
-    //dxd
+    
     echo "El numero menor es :".$menor;
 ?>
