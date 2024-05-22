@@ -31,7 +31,7 @@ class Calculadora {
         return pow($this->PrimerNumero,$this->SegundoNumero);
     }
     public function raiz() {
-        return sqrt($this->PrimerNumero);
+        return $this->PrimerNumero**(1/$this->SegundoNumero);
     }
 }
 

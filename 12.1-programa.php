@@ -10,6 +10,7 @@ echo "******** DIVIDIR (OPCION 4) *********\n";
 echo "******** POTENCIA (OPCION 5) *********\n";
 echo "******** RAIZ (OPCION 6) *********\n";
 echo "******** SALIR (OPCION 0) *********\n";
+do{
 echo "INGRESE LA OPCION :";
 
 $opcion = fgets(STDIN);
@@ -66,7 +67,7 @@ switch ($opcion) {
         $numero1 = fgets(STDIN);
         echo "Escriba el segundo Numero: ";
         $numero2 = fgets(STDIN);
-        $calculadora = new Calculadora($numero1,$numero2);
+        $calculadora = new Calculadora($numero2,$numero1);
         $resultado = $calculadora->raiz();
         echo "\nLa Raiz es : ".$resultado;
         break;
@@ -78,4 +79,11 @@ switch ($opcion) {
         # code...
         break;
 }
+       if($opcion ==0) break;
+       echo "\n Desea Continuar ? (Si=1/No=0): ";
+       $rpta = fgets(STDIN);
+}
+
+while($rpta==1);
+
 ?>
