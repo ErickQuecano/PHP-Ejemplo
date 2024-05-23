@@ -1,17 +1,15 @@
 <?php
-include ("14-herencia.php");
-
-echo "Ejmplo de Herencia con Animales\n";
-
-$perro= new Perro("Cueva","Verde",false,"perro-ladra.mp3");
+include("14-herencia.php");
+echo "EJEMPLO DE HERENCIA CON ANIMALES\n";
+$perro= new Perro("Coimita","Verde",false,"perro-ladra.mp3");
 echo $perro->obtenerInformacion()."\n";
-echo $perro->hacerSonido("Guauu");
+echo $perro->hacerSonido("Guauu\n");
 
-$gato= new Gato("Cueva","Amarillo",false,"gallina-ki..mp3");
+$gato= new Gato("Pelusa","Rojo",false,"gato-miau.mp3");
 echo $gato->obtenerInformacion()."\n";
-echo $gato->hacerSonido("Kiki riki");
+echo $gato->hacerSonido("Miau\n");
 
-$gallina= new Gallina("Cueva","Rojo",false,"gato-miau.mp3");
-echo $gallina->obtenerInformacion()."\n";
-echo $gallina->hacerSonido("Miauu");
+$pollo= new Pollo("Claudio","Amarillo",false,"gallina-ki.mp3");
+echo $pollo->obtenerInformacion()."\n";
+echo $pollo->hacerSonido("Pio Pio\n");
 ?>
