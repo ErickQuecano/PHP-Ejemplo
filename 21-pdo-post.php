@@ -27,7 +27,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($nombre) || empty($apellido) || empty($edad) || empty($talla) || empty($peso)) {
         echo "Todos los campos son obligatorios." ;
     }
-
+    if ($edad >= 18 && $peso <40){
+        echo "Ingrese un peso adecuado";
+    }
+    else{
     if($tos== 1 || $fiebre == 1 || $disnea==1 || $dolor_muscular==1 ||
     $gripe == 1 ||  $Presion_alta==1 || $Fatiga==1 ||  $Garraspera==1)  {
         $resultado = "1";
@@ -35,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     else {
         $resultado ="0";
     }
-
+    
     $servername = "localhost";
     $username = "root";
     $password ="root";    
@@ -60,6 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     catch(Exception $e) {
         echo "Error : ".$e->getMessage();
     }
-    
+};
 }
+
 ?>
