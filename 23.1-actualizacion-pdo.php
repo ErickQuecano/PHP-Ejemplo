@@ -14,14 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $disnea = $disnea == "" ? "0" : $disnea;
     $dolor_muscular = array_key_exists("dolor_muscular",$_POST) ? $_POST['dolor_muscular'] : "0";
     $dolor_muscular = $dolor_muscular == "" ? "0" : $dolor_muscular;
-    $gripe = array_key_exists("gripe",$_POST) ? $_POST['gripe'] : "0";
-    $gripe = $gripe == "" ? "0" : $gripe;
-    $Presion_alta = array_key_exists("Presion_alta",$_POST) ? $_POST['Presion_alta'] : "0";
-    $Presion_alta = $Presion_alta == "" ? "0" : $Presion_alta;
-    $Fatiga = array_key_exists("Fatiga",$_POST) ?  $_POST['Fatiga'] : "0";
-    $Fatiga = $Fatiga == "" ? "0" : $Fatiga;
-    $Garraspera = array_key_exists("Garraspera",$_POST) ? $_POST['Garraspera'] : "0";
-    $Garraspera = $Garraspera == "" ? "0" : $Garraspera;
     $fecha = $_POST['fecha'];
    
     if (empty($nombre) || empty($apellido) || empty($edad) || empty($talla) || empty($peso)) {
@@ -29,8 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 
-    if($tos== 1 || $fiebre == 1 || $disnea==1 || $dolor_muscular==1 ||
-    $gripe == 1 ||  $Presion_alta==1 || $Fatiga==1 ||  $Garraspera==1)  {
+    if($tos== 1 || $fiebre == 1 || $disnea==1 || $dolor_muscular==1)  {
         $resultado = "1";
     }
     else {
@@ -47,12 +38,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conn->beginTransaction();
         $sql="INSERT INTO `pacientes` (`nombres`, `apellidos`,
         `edad`, `talla_m`, `peso_kg`, `sintoma_tos`,
-        `sintoma_fiebre`, `sintoma_disnea`, `sintoma_dolormuscular`,
-        `sintoma_gripe`, `sintoma_presionalta`, `sintoma_fatiga`,
-            `sintoma_garraspera`, `ultima_fecha_vacunacion`, `resultado`)
+        `sintoma_fiebre`, `sintoma_disnea`)
             VALUES ('$nombre', '$apellido', $edad, $talla, $peso, 
-            '$tos', '$fiebre', '$disnea', '$dolor_muscular','$gripe'
-            , '$Presion_alta', '$Fatiga', '$Garraspera', '$fecha', '$resultado');";
+            '$tos', '$fiebre', '$disnea', '$dolor_muscular');";
 
         $conn->exec($sql);    
         $conn->commit();
