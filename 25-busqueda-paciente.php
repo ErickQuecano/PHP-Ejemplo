@@ -43,9 +43,27 @@
                     aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <imput type='hidden' id='id_paciente'>
                     <label for="name" class="form-label">Nombre:</label>
                     <input type="text" class="form-control" id="nombre2" name="nombre2"/>
+                    <label for="name" class="form-label">Edad:</label>
+                    <input type="text" class="form-control" id="edad" name="edad"/>
+                    <label for="name" class="form-label">Talla:</label>
+                    <input type="text" class="form-control" id="talla" name="talla"/>
+                    <label for="name" class="form-label">Peso:</label>
+                    <input type="text" class="form-control" id="peso" name="peso"/><br>
+
+                    <label for="name" class="form-label">Sintomas:</label><br>
+
+                   
+                    <input type="checkbox" name="sintoma_tos" id="sintoma_tos" value="1">
+                    <label for="name" class="form-label">   (Tos)</label><br>
+                    <input type="checkbox" name="sintoma_fiebre" id="sintoma_fiebre" value="1">
+                    <label for="name" class="form-label">   (Fiebre)</label><br>
+                    <input type="checkbox" name="sintoma_disnea" id="sintoma_disnea" value="1">
+                    <label for="name" class="form-label">   (Disnea)</label>
                 </div>
+                <button type="button" class="btn-accept" onclick="actualizar();">Guardar</button>
             </div>
         </div>
     </div>
